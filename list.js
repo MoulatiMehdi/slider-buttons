@@ -17,6 +17,10 @@ function createTag(name, attributes = {}, nodes = null) {
 }
 
 var currSlider = 0; // current  active slide (from 0 -> TOTAL_SLIDERS - 1 )
+
+/**
+ * @type {HTMLLIElement[]}
+ */
 const sliders = []; //  sliders elements (li)
 
 const TOTAL_SLIDERS = 18; // Total number of slides
@@ -42,13 +46,12 @@ const parentDiv = createTag("div", { class: "container", id: "divParent" }, [
 	nextGrBt,
 ]);
 
-document.body.appendChild(parentDiv);
+document.body.append(parentDiv);
 
 // create list elements
 for (let i = 0; i < SLIDERS_PER_GROUP; i++) {
-	const li = document.createElement("li");
-	slidersContainer.appendChild(li);
-	sliders[i] = li;
+	sliders[i] = document.createElement("li");
+	slidersContainer.appendChild(sliders[i]);
 }
 
 updateIndexes();
@@ -147,9 +150,9 @@ function updateBtns() {
 
 function updateIndexes() {
 	const start = currSlider - (currSlider % SLIDERS_PER_GROUP);
-	for (let i = 0; i < SLIDERS_PER_GROUP; i++) {
+	for (let i = SLIDERS_PER_GROUP - 1; i >= 0; i--) {
 		const nbr = i + start;
-		sliders[i].style.display = nbr > TOTAL_SLIDERS ? "none" : "";
+		sliders[i].style.display = nbr >= TOTAL_SLIDERS ? "none" : "";
 		sliders[i].innerText = nbr + 1;
 	}
 }

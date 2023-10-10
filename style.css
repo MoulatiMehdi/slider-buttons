@@ -34,7 +34,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex: content;
 }
 .cont-child {
 }
@@ -45,7 +44,6 @@ ul {
 }
 
 li {
-	transition: all ease-in-out 0.3s;
 	font-family: "nunito";
 	font-weight: 600;
 	border-radius: 5px;
@@ -60,11 +58,15 @@ li {
 }
 
 li:not(:disabled) {
+	transition: all ease-in-out 0.3s;
+
 	background-color: rgb(var(--btn-bg-main));
 	color: rgb(var(--btn-color-main));
 }
 
 li:hover {
+	transition: all ease-in-out 0.3s;
+
 	background-color: rgb(var(--btn-bg-main));
 	opacity: 0.5;
 	color: rgb(var(--btn-color-main));
