@@ -1,0 +1,94 @@
+:root {
+	--btn-bg-main: 19, 74, 213;
+	--btn-color-main: 255, 255, 255;
+}
+.btn {
+	transition: all 0.3s ease-in-out;
+	padding: 5px 15px;
+	font-weight: 700;
+	height: 40px;
+	font-family: "Cairo";
+
+	margin: 0 10px;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn-purple:not(:disabled) {
+	background-color: rgb(var(--btn-bg-main));
+	color: rgb(var(--btn-color-main));
+}
+
+.btn-purple:hover:not(:disabled) {
+	background-color: rgb(var(--btn-bg-main));
+	opacity: 0.5;
+	color: rgb(var(--btn-color-main));
+}
+.btn:disabled {
+	background-color: gainsboro;
+	color: gray;
+	cursor: not-allowed;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: content;
+}
+.cont-child {
+}
+ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0 10px;
+}
+
+li {
+	transition: all ease-in-out 0.3s;
+	font-family: "nunito";
+	font-weight: 600;
+	border-radius: 5px;
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	cursor: pointer;
+	border: transparent 2px solid;
+}
+
+li:not(:disabled) {
+	background-color: rgb(var(--btn-bg-main));
+	color: rgb(var(--btn-color-main));
+}
+
+li:hover {
+	background-color: rgb(var(--btn-bg-main));
+	opacity: 0.5;
+	color: rgb(var(--btn-color-main));
+}
+li:disabled {
+	background-color: gainsboro;
+	color: gray;
+	cursor: not-allowed;
+}
+
+li.active {
+	transition: all ease-in-out 0.3s;
+
+	margin-top: -10px;
+	background-color: rgb(255, 255, 255, 0.5);
+	color: rgb(var(--btn-bg-main));
+	border-color: rgb(var(--btn-bg-main));
+}
+
+html,
+body {
+	background-color: antiquewhite;
+	height: 100vh;
+	width: 100vw;
+	padding: 0;
+	margin: 0;
+}
